@@ -1,6 +1,6 @@
 add video background to homepage
-install sass
 add smoothState.js
+Background pattern, put micds robotics logo
 create API for:
 	create Blog post
 	change blog post

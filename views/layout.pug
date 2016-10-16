@@ -11,11 +11,11 @@ html
 			a(href="/blog")
 				div(class="navbar-item") Blog
 			a(href="/sign-in" )
-				div(class="navbar-item") Sign-in
+				div(class="navbar-item") Members Sign-in
 			a(href="/about")
 				div(class="navbar-item") About us
 		block content
-		div(class="return-home")
-			unless page === 'home'
-				a(href="/home")
-					h2 Return to home
+		unless page === 'home'
+			div(class="return-home")
+					a(href="/home")
+						h2 Return to home
