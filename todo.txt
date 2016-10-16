@@ -1,0 +1,13 @@
+add video background to homepage
+install sass
+add smoothState.js
+create API for:
+	create Blog post
+	change blog post
+	get blog posts
+	insert user info
+	change user info
+	get user info
+	sign-in user
+	sign-out user
+	get time (server side)

@@ -1,0 +1,21 @@
+doctype html
+html
+	head
+		title= title
+		link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous")
+		script(src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous")
+		script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js" integrity="sha384-VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU" crossorigin="anonymous")
+		link(rel='stylesheet', href='/stylesheets/style.css')
+	body
+		div(class="navbar")
+			a(href="/blog")
+				div(class="navbar-item") Blog
+			a(href="/sign-in" )
+				div(class="navbar-item") Sign-in
+			a(href="/about")
+				div(class="navbar-item") About us
+		block content
+		div(class="return-home")
+			unless page === 'home'
+				a(href="/home")
+					h2 Return to home

@@ -1,0 +1,35 @@
+@import 'common';
+
+a, a:hover {
+	text-decoration: none;
+	color: $micds-yellow;
+	&:hover{
+		color: lighten($micds-yellow, 25%);
+	}
+}
+
+.navbar {
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+	padding: 0;
+	a {
+		width: calc(100% / 3);
+		text-align: center;
+		font-weight: 600;
+		font-size: 2rem;
+		&:nth-child(2) {
+			background-color: $micds-green;
+		}
+		&:nth-child(2n+1) {
+			background-color: $micds-red;
+		}
+	}
+}
+
+.return-home {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding: 10px;
+}
