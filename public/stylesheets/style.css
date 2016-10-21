@@ -9,15 +9,34 @@ a, a:hover {
   width: 100%;
   justify-content: space-around;
   padding: 0; }
-  .navbar a {
+  .navbar .navbar-item {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
     width: calc(100% / 3);
     text-align: center;
     font-weight: 600;
     font-size: 2rem; }
-    .navbar a:nth-child(2) {
+    .navbar .navbar-item:nth-child(2) {
       background-color: #197C5D; }
-    .navbar a:nth-child(2n+1) {
+    .navbar .navbar-item:nth-child(2n+1) {
       background-color: #C10538; }
+    .navbar .navbar-item a {
+      width: 100%; }
+  .navbar .subnav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column; }
+    .navbar .subnav a {
+      width: 100%; }
+      .navbar .subnav a .subnav-item {
+        background-color: #f30646;
+        overflow: hidden;
+        height: 0px;
+        transition: height ease-out 0.3s; }
+  .navbar .subnav:hover .subnav-item {
+    height: 60px; }
 
 .return-home {
   position: absolute;

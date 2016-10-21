@@ -13,7 +13,10 @@ a, a:hover {
 	width: 100%;
 	justify-content: space-around;
 	padding: 0;
-	a {
+	.navbar-item {
+		display: flex;
+		justify-content: space-around;
+		height: 100%;
 		width: calc(100% / 3);
 		text-align: center;
 		font-weight: 600;
@@ -23,6 +26,30 @@ a, a:hover {
 		}
 		&:nth-child(2n+1) {
 			background-color: $micds-red;
+		}
+		a {
+			width: 100%;
+		}
+	}
+
+	.subnav {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-direction: column;
+		a {
+			width: 100%;
+			.subnav-item {
+				background-color: lighten($micds-red, 10%);
+				overflow: hidden;
+				height: 0px;
+				transition: height ease-out 0.3s;
+			}
+		}
+	}
+	.subnav:hover {
+		.subnav-item {
+			height: 60px;
 		}
 	}
 }
