@@ -12,5 +12,5 @@ create API for:
 	sign-out user
 	get time (server side)
 create schema for members
-
+Users are able to send a login request to the admin to rquest login, or the admin can log in the users. 
 the sign in page will have a teacher view and a student view, the teacher can sign in any student, but the student can only view their hours. Teacher view needs a password. 
