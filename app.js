@@ -5,6 +5,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 
 var routes = require('./routes/index');
 var blogAPI = require('./routes/blogAPI');
@@ -23,12 +24,20 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use('/public', express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/blog', blogAPI);
 app.use('/sign-in', signInAPI);
-app.use('/public', express.static('public'));
+
+// Database connection
+mongoose.connect('mongodb://mymicds-client:1amAcli3nt@45.56.70.141:27017/mymicds-userdata');
+var db = mongoose.connection;
+db.on('error', function() {console.log('connection error')});
+db.once('open', function() {
+	console.log('connected');
+})
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

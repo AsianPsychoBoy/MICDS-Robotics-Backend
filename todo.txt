@@ -11,3 +11,6 @@ create API for:
 	sign-in user
 	sign-out user
 	get time (server side)
+create schema for members
+
+the sign in page will have a teacher view and a student view, the teacher can sign in any student, but the student can only view their hours. Teacher view needs a password. 

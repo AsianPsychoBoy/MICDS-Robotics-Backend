@@ -56,7 +56,7 @@ a, a:hover {
 
 .slide-show::after {
   content: '';
-  background: url("../public/img/polygon_pattern.svg") no-repeat center;
+  background: url("../img/polygon_pattern.svg") no-repeat center;
   background-size: cover; }
 
 @keyframes imageAnimation {
@@ -73,36 +73,36 @@ a, a:hover {
   100% {
     opacity: 0; } }
 .slide-show li:nth-child(1) span {
-  background-image: url(../public/img/3DTeam.jpg);
+  background-image: url(../img/3DTeam.jpg);
   -webkit-filter: brightness(50%);
   filter: brightness(50%); }
 
 .slide-show li:nth-child(2) span {
-  background-image: url(../public/img/FLLNov.png);
+  background-image: url(../img/FLLNov.png);
   -webkit-filter: brightness(50%);
   filter: brightness(50%);
   animation-delay: 6s; }
 
 .slide-show li:nth-child(3) span {
-  background-image: url(../public/img/Kristin.jpg);
+  background-image: url(../img/Kristin.jpg);
   -webkit-filter: brightness(50%);
   filter: brightness(50%);
   animation-delay: 12s; }
 
 .slide-show li:nth-child(4) span {
-  background-image: url(../public/img/MentorRamp.png);
+  background-image: url(../img/MentorRamp.png);
   -webkit-filter: brightness(50%);
   filter: brightness(50%);
   animation-delay: 18s; }
 
 .slide-show li:nth-child(5) span {
-  background-image: url(../public/img/NiemaCommunity.jpg);
+  background-image: url(../img/NiemaCommunity.jpg);
   -webkit-filter: brightness(50%);
   filter: brightness(50%);
   animation-delay: 24s; }
 
 .slide-show li:nth-child(6) span {
-  background-image: url(../public/img/RobotAlpha.jpg);
+  background-image: url(../img/RobotAlpha.jpg);
   -webkit-filter: brightness(50%);
   filter: brightness(50%);
   animation-delay: 30s; }
