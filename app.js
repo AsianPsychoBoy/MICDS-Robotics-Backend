@@ -9,7 +9,8 @@ var mongoose = require('mongoose');
 
 var routes = require('./routes/index');
 var blogAPI = require('./routes/blogAPI');
-var signInAPI = require('./routes/sign-inAPI')
+var signInAPI = require('./routes/sign-inAPI');
+var authAPI = require('./routes/authAPI');
 
 var app = express();
 app.locals.compileDebug = true;
@@ -17,6 +18,15 @@ app.locals.compileDebug = true;
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
+
+// Database connection
+mongoose.connect('mongodb://robotics-client:getittogetherjack@45.56.70.141:27017/micds-robotics?3t.uriVersion=2&3t.connectionMode=direct&3t.databases=micds-robotics&readPreference=primary');
+var db = mongoose.connection;
+db.on('error', function() {console.log('connection error')});
+db.once('open', function() {
+	console.log('connected');
+})
+
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -29,15 +39,7 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/blog', blogAPI);
 app.use('/sign-in', signInAPI);
-
-// Database connection
-mongoose.connect('mongodb://mymicds-client:1amAcli3nt@45.56.70.141:27017/mymicds-userdata');
-var db = mongoose.connection;
-db.on('error', function() {console.log('connection error')});
-db.once('open', function() {
-	console.log('connected');
-})
-
+app.use('/auth', authAPI);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

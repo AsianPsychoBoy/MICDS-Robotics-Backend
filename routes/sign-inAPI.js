@@ -1,3 +1,4 @@
+'use strict';
 var express = require('express');
 var router = express.Router();
 
@@ -8,12 +9,12 @@ router.get('/', function(req, res, next) {
 
 /* POST admin login info. */
 router.post('/admin-login', function(req, res, next) {
-  console.log(req.body);
+console.log(req.body);
 });
 
 // GET members listing
 router.get('/users', function(req, res, next) {
-  
+
 })
 
 // GET individual members
@@ -21,8 +22,9 @@ router.get('/user/:id', function(req, res, next) {
 
 })
 
-// POST for sign in a user from admin account
+// POST for signing in a user from admin account
 router.post('/admin/:id', function(req, res, next) {
 
 })
+
 module.exports = router;

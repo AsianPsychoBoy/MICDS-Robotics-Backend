@@ -1,0 +1,12 @@
+@import '_common';
+
+.create-blog{
+	float: right;
+	padding: 0.5em;
+	.plus {
+		background: $micds-yellow;
+		color: white;
+		border-radius: 5px;
+		line-height: 1;
+	}
+}

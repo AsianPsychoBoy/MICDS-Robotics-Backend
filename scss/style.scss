@@ -1,4 +1,5 @@
-@import 'common';
+@import '_sass-easing';
+@import '_common';
 
 a, a:hover {
 	text-decoration: none;
@@ -37,13 +38,15 @@ a, a:hover {
 		justify-content: space-around;
 		align-items: center;
 		flex-direction: column;
+		margin-bottom: -120px;
 		a {
 			width: 100%;
-			.subnav-item {
+			.subnav-item  {
 				background-color: lighten($micds-red, 10%);
-				overflow: hidden;
+				width: 100%;
 				height: 0px;
-				transition: height ease-out 0.3s;
+				transition: height $easeOutExpo 0.4s;
+				overflow: hidden;
 			}
 		}
 	}
@@ -138,3 +141,5 @@ a, a:hover {
 	z-index: 0;
 	animation: imageAnimation 36s linear infinite 0s;
 }
+
+@import '_blog' 

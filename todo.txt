@@ -14,3 +14,4 @@ create API for:
 create schema for members
 Users are able to send a login request to the admin to rquest login, or the admin can log in the users. 
 the sign in page will have a teacher view and a student view, the teacher can sign in any student, but the student can only view their hours. Teacher view needs a password. 
+an edit entries view for the blog posts, create, edit, delete. All actions are sent with a token. 
