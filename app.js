@@ -22,10 +22,10 @@ app.set('view engine', 'pug');
 // Database connection
 mongoose.connect('mongodb://robotics-client:getittogetherjack@45.56.70.141:27017/micds-robotics?3t.uriVersion=2&3t.connectionMode=direct&3t.databases=micds-robotics&readPreference=primary');
 var db = mongoose.connection;
-db.on('error', function() {console.log('connection error')});
+db.on('error', function() {console.log('connection error');});
 db.once('open', function() {
 	console.log('connected');
-})
+});
 
 
 // uncomment after placing your favicon in /public
