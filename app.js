@@ -6,6 +6,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var config = require('./lib/config');
+var jwt = require('express-jwt');
+var unless = require('express-unless');
 
 var routes = require('./routes/index');
 var blogAPI = require('./routes/blogAPI');
@@ -34,6 +37,12 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(jwt({
+	secret: config.jwtSecret,
+	getToken: function (req) {
+		return req.cookies.jwt;
+	}
+}).unless({ path: ['/auth/login'] }));
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
