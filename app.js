@@ -6,9 +6,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var config = require('./lib/config');
-var jwt = require('express-jwt');
-var unless = require('express-unless');
 
 var routes = require('./routes/index');
 var blogAPI = require('./routes/blogAPI');
@@ -25,10 +22,10 @@ app.set('view engine', 'pug');
 // Database connection
 mongoose.connect('mongodb://robotics-client:getittogetherjack@45.56.70.141:27017/micds-robotics?3t.uriVersion=2&3t.connectionMode=direct&3t.databases=micds-robotics&readPreference=primary');
 var db = mongoose.connection;
-db.on('error', function() {console.log('connection error')});
+db.on('error', function() {console.log('connection error');});
 db.once('open', function() {
 	console.log('connected');
-})
+});
 
 
 // uncomment after placing your favicon in /public
@@ -37,12 +34,6 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(jwt({
-	secret: config.jwtSecret,
-	getToken: function (req) {
-		return req.cookies.jwt;
-	}
-}).unless({ path: ['/auth/login'] }));
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
