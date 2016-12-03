@@ -1,14 +1,17 @@
 'use strict';
 var mongoose = require("mongoose");
 
+var currentDate = new Date();
 var memberSchema = mongoose.Schema({
 	name: String,
 	grade: Number,
-	signed-in: Boolean,
-	totalTime: {type: Number, value: 0}
-	weekTime: {type: Number, value: 0}
-	mostRecentSignInTime: Date,
-	mostRecentSignOutTime: Date
+	MICDSEmail: String,
+	'signed-in': {type: Boolean, default: false},
+	totalTime: {type: Number, default: 0},
+	twoWeekTime: {type: Number, default: 0},
+	mostRecentSignInTime: {type: Date, default: currentDate},
+	mostRecentSignOutTime: {type: Date, default: currentDate},
+	admin: {type: Boolean, default: false}
 });
 
 var Member = mongoose.model('Member', memberSchema);
