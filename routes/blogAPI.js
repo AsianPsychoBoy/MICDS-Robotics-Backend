@@ -37,13 +37,13 @@ router.post('/create', function(req, res, next) {
 		errObj.status = 400;
 		next(errObj);
 	}
-	Blog.create(req.body, function(err) {
+	Blog.create(req.body, function(err, blog) {
 		if (err) {
 			var errObj = new Error(err);
 			errObj.status = 500;
 			next(errObj);
 		};
-		res.redirect('/blog');
+		res.json(blog);
 	})
 });
 
@@ -59,7 +59,7 @@ router.post('/delete', function(req, res, next) {
 			errObj.status = 500;
 			next(errObj);
 		};
-		res.redirect('/blog');
+		res.json({sucsess: true});
 	})
 });
 
@@ -79,4 +79,12 @@ router.post('/update', function(req, res, next) {
 	})
 })
 
+router.post('/findAll', function(req, res, next) {
+	Blog.findAll(function(blogs) {
+		if (!blogs) {
+			res.json({});
+		}
+		res.json(blogs);
+	})
+})
 module.exports = router;

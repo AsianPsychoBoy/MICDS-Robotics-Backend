@@ -2,8 +2,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var mockEntries = require('../mock/mockBlogEntries');
-
 var blogSchema = new Schema({
 	title: String,
 	content: String,
